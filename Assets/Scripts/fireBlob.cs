@@ -9,6 +9,7 @@ public class fireBlob : MonoBehaviour
 
     private GameObject blobToLaunch;
     private GameObject targetObject;
+    private Vector3 initialOffset;
     private Vector3 startPoint;
 
     private bool reloading = false;
@@ -22,12 +23,12 @@ public class fireBlob : MonoBehaviour
 
         blobToLaunch = transform.Find("blob").gameObject;
 
-        startPoint = blobToLaunch.transform.position;
+        initialOffset = new Vector3(0.1f, -0.2f, 0.2f);
 
         recognizer = new GestureRecognizer();
         recognizer.SetRecognizableGestures(GestureSettings.Tap);
         recognizer.TappedEvent += Recognizer_TappedEvent;
-        
+        recognizer.StartCapturingGestures();
     }
 	
 	// Update is called once per frame
@@ -52,7 +53,7 @@ public class fireBlob : MonoBehaviour
 
         Rigidbody blobRB = blobToLaunch.GetComponent<Rigidbody>();
         blobRB.isKinematic = false;
-        blobRB.AddForce(Camera.main.transform.forward * amountOfForce, typeOfForce);
+        blobRB.AddForce((Camera.main.transform.forward + Camera.main.transform.up * 0.5f) * amountOfForce, typeOfForce);
         
         Destroy(blobToLaunch, 3f);
         reloading = true;
@@ -61,6 +62,8 @@ public class fireBlob : MonoBehaviour
 
     private void reload()
     {
+        Transform cT = Camera.main.transform;
+        startPoint = cT.position + cT.forward * initialOffset.z + cT.up * initialOffset.y + cT.right * initialOffset.x;
         blobToLaunch = Instantiate(Resources.Load("Prefabs/bubble"), startPoint, Quaternion.identity, this.gameObject.transform) as GameObject;
         reloading = false;
     }
@@ -72,13 +75,13 @@ public class fireBlob : MonoBehaviour
 
     private void Recognizer_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
     {
-        Debug.Log("got a tap");
+        Debug.Log("air tap detected");
 
         RaycastHit hitInfo;
         Vector3 cPos = Camera.main.transform.position;
         Vector3 cFor = Camera.main.transform.forward;
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, 20.0f, Physics.DefaultRaycastLayers))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, 6.0f, Physics.AllLayers))
         {
             targetObject = hitInfo.collider.gameObject;
             fire();

@@ -597,11 +597,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: C:\Users\Will\source\repos\holoSpaff\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 8038667ddf8ed501
+  metroCertificateNotAfter: 00c43203728fd501
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: 
