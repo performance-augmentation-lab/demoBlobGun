@@ -5,10 +5,10 @@ basics of visualising the spatial map, creating a gameobject (with physics)
 and causing this to interact with the mesh. 
 
 __Demonstrates the use of:__
-> * A parent gameobject - BlobGun - container for blobs.
-> * A child gameobject - Blob - based on prefab 'bubble'.
-> * A single material and shader to give the blob a "glassy" appearence.
-> * A script (fireBlob.cs) handling firing and reloading.
+> A parent gameobject - BlobGun - container for blobs.
+> A child gameobject - Blob - based on prefab 'bubble'.
+> A single material and shader to give the blob a "glassy" appearence. \n
+> A script (fireBlob.cs) handling firing and reloading. /n
 
 __Illustrates concepts of:__
 Basic project structure and Holotoolkit components.
