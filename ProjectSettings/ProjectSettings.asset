@@ -11,8 +11,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: holoSpaff
+  companyName: Performance Augmentation Lab
+  productName: blobGunDemo
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -597,11 +597,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: DefaultCompany
-  metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 00c43203728fd501
+  metroCertificateSubject: Performance Augmentation Lab
+  metroCertificateIssuer: Performance Augmentation Lab
+  metroCertificateNotAfter: 8073987e7a8fd501
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: 
